@@ -1,3 +1,4 @@
+package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 /**
@@ -13,6 +14,10 @@ public abstract class CurrentMood {
         this.date= new Date();
 
     }
+    public CurrentMood(Date date){
+        this.date= date;
+
+    }
 
     public CurrentMood(String message, Date date) {
         this.message = message;
@@ -24,16 +29,7 @@ public abstract class CurrentMood {
         return message;
     }
 
-    public void setMessage(String message) throws MoodGood {
-        if (message = ("happy") {
-            throw new  MoodGood();
-        }
-        else {
 
-
-            throw new MoodBad;
-        }
-    }
 
     public Date getDate() {
         return date;
@@ -44,7 +40,18 @@ public abstract class CurrentMood {
     }
 
 
-    public abstract Boolean isGood();
+    public abstract String getMood();
+
+    public void setMood(String input, Date date){
+        if (input == "good"){
+            moods.add(new MoodGood(date));
+
+
+        } else if(input == "Bad")
+
+
+
+    }
 
 
 
