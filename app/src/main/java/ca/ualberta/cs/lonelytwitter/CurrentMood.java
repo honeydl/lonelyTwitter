@@ -42,12 +42,6 @@ public abstract class CurrentMood {
 
     public abstract String getMood();
 
-    public void setMood(String input, Date date){
-        if (input == "good"){
-            moods.add(new MoodGood(date));
-
-
-        } else if(input == "Bad")
 
 
 
@@ -61,4 +55,3 @@ public abstract class CurrentMood {
 
 
 
-}
