@@ -54,6 +54,7 @@ public abstract class Tweet {
         return moodsList;
     }
 
+    //setMood method , get helped from Yongjia Huang
     public void setMood(String input, Date date) {
         if (input == "good") {
             moodsList.add(new MoodGood(date));
