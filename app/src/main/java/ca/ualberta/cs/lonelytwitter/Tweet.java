@@ -4,6 +4,8 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 import java.util.ArrayList;
 
+import static android.R.attr.text;
+
 /**
  * Created by donglin3 on 9/12/17.
  */
@@ -49,6 +51,11 @@ public abstract class Tweet {
     }
 
     public abstract Boolean isImportant();
+
+    @Override
+    public String toString(){
+        return date.toString()+ "|" + text;
+    }
 
     public ArrayList CurrentMood() {
         return moodsList;
