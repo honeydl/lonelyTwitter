@@ -39,8 +39,14 @@ public class LonelyTwitterActivity extends Activity {
 
 	private ArrayList<Tweet> tweetList;
 	private ArrayAdapter<Tweet> adapter;
-	
-	/** Called when the activity is first created. */
+
+	public ListView getOldTweetsList() {
+		return oldTweetsList;
+	}
+
+	/**
+	 * Called when the activity is first created.
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -65,12 +71,23 @@ public class LonelyTwitterActivity extends Activity {
 				//finish();
 
 
-
-
-
 			}
 		});
-	}
+
+
+		Button clearButton = (Button) findViewById(R.id.save);
+		clearButton.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View v) {
+				tweetList.clear();
+				adapter.notifyDataSetChanged();
+				saveInFile();
+			}
+		});
+
+}
+
+			//finish();
 
 	@Override
 	protected void onStart() {
@@ -103,7 +120,7 @@ public class LonelyTwitterActivity extends Activity {
 		}
 
 	}
-	
+
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
