@@ -65,6 +65,7 @@ public class LonelyTwitterActivity extends Activity {
 				NormalTweet newTweet = new NormalTweet("Hello");
 
 				tweetList.add(newTweet);
+				adapter.notifyDataSetChanged();
 
 
 				saveInFile();
@@ -75,7 +76,7 @@ public class LonelyTwitterActivity extends Activity {
 		});
 
 
-		Button clearButton = (Button) findViewById(R.id.save);
+		Button clearButton = (Button) findViewById(R.id.clear);
 		clearButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
