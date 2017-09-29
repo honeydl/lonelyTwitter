@@ -1,3 +1,16 @@
+/*
+
+Mainpage for lonelyTwitter
+
+Version1.0
+
+September 26th 2017
+
+ * Copyright (c) CMPUT301, University of Alberta - All Rights Reserved.
+ *  You may use, copy or distribute this code under terms and conditions of University of Alberta and Code of Student Behavior.
+ *   Please contact abc@abc.ca for more details or questions.
+ */
+
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
@@ -29,7 +42,16 @@ import com.google.gson.reflect.TypeToken;
  * Created by donglin3 on 9/12/17.
  */
 
-
+/**
+ * This class is the main view class in lonelyTwitter class.
+ * It contains user inputs, saves and load files
+ *
+ * @author donglin
+ * @see NormalTweet
+ * @see java.io.BufferedReader
+ * @see ImportantTweet
+ * @since 1.5
+ */
 
 public class LonelyTwitterActivity extends Activity {
 
@@ -100,6 +122,11 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
+	/**
+	 * load information from files
+	 * @throws RuntimeException
+	 * @exception FileNotFoundException
+	 */
 	private void loadFromFile() {
 
 	    try {
@@ -122,6 +149,11 @@ public class LonelyTwitterActivity extends Activity {
 
 	}
 
+	/**
+	 * save information in files
+	 * @throws RuntimeException
+	 * @exception FileNotFoundException
+	 */
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
